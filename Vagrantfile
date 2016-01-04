@@ -41,4 +41,11 @@ Vagrant.configure(2) do |config|
 
     SHELL
 
+    # VIRTUALBOX CONFIG
+    #config.vm.provider "virtualbox" do |v|
+    #    v.name   = "vagrant-dev-machine"  # VM NAME
+    #    v.cpus   = 2                      # VM CORES
+    #    v.memory = 2048                   # VM MEMORY
+    #end
+
 end

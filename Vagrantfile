@@ -36,9 +36,11 @@ Vagrant.configure(2) do |config|
         swapon /swapfile
         su -c "echo '/swapfile   none    swap    sw    0   0' >> /etc/fstab"
 
+        # UPDATE PACKAGES LIST
+        apt-get update
+
         # INSTALL UTILS
-        sudo apt-get update
-        sudo apt-get install -y htop mc nano
+        apt-get install -y htop mc nano git
 
     SHELL
 

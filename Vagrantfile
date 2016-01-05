@@ -42,6 +42,14 @@ Vagrant.configure(2) do |config|
         # INSTALL UTILS
         apt-get install -y htop mc nano git
 
+        # INSTALL LAMP SERVER
+        debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'              # MySQL PASSWORD = root
+        debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'        # MySQL PASSWORD = root
+        apt-get install -y lamp-server^                                                                 # INSTALL LAMP PACKAGES
+
+        # INSTALL EXTRA PHP LIBRARIES
+        apt-get install -y php5-cli php5-curl php5-gd php5-json php5-mcrypt php5-sqlite
+
     SHELL
 
     # VIRTUALBOX CONFIG

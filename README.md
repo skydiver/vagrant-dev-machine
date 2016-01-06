@@ -1,7 +1,7 @@
 # vagrant-dev-machine
 Just a Vagrant development machine
 
-# Included software
+### Included software
 * Ubuntu 14.04 [64bits]
 * Server software
  * Apache

@@ -36,6 +36,10 @@ Vagrant.configure(2) do |config|
         swapon /swapfile
         su -c "echo '/swapfile   none    swap    sw    0   0' >> /etc/fstab"
 
+        # FIX SSH LOCALE
+        sed -i -e 's/^\AcceptEnv LANG LC_*/#\AcceptEnv LANG LC_*/g' /etc/ssh/sshd_config
+        service ssh restart
+
         # UPDATE PACKAGES LIST
         apt-get update
 
